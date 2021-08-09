@@ -7,7 +7,7 @@
     "url": "git+https://github.com/sosohanya/wetube-reloaded.git"
   },
   "scripts": {
-    "dev": "nodemon --exec ./node_modules/.bin/babel-node index.js"
+    "dev": "nodemon --exec ./node_modules/.bin/babel-node src/server.js"
   },
   "author": "sosohanya.com",
   "license": "MIT",
