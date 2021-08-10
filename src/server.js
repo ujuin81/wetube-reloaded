@@ -3,10 +3,12 @@ import express from "express"
 const PORT = 4000;
 const app = express();
 
-const handleMiddle = (req, res, next) => {
-    console.log('This is Middleware~');
+const logger = (req, res, next) => {
+    console.log(`[logger] ${req.method} ${req.url}`);
     next();
 }
+
+app.use(logger);
 
 const handleHome = (req, res) => {
     console.log(`get request / home!!`);
@@ -19,7 +21,7 @@ const handleLogin = (req, res) => {
 }
 
 app.get("/", handleHome);
-app.get("/login", handleMiddle, handleLogin);
+app.get("/login", handleLogin);
 
 const handleListening = ()=> console.log(`server listening on port http://localhost:${PORT}`);
 
