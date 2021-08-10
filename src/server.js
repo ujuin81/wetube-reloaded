@@ -1,12 +1,10 @@
-import express from "express"
+import express from "express";
+import morgan from "morgan"
 
 const PORT = 4000;
 const app = express();
 
-const logger = (req, res, next) => {
-    console.log(`[logger] ${req.method} ${req.url}`);
-    next();
-}
+const logger = morgan("dev");
 
 app.use(logger);
 
