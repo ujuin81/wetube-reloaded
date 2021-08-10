@@ -6,20 +6,18 @@ const app = express();
 
 const logger = morgan("dev");
 
-app.use(logger);
-
-const handleHome = (req, res) => {
-    console.log(`get request / home!!`);
+const home = (req, res) => {
     return res.send("Welcome Home");
 }
 
-const handleLogin = (req, res) => {
-    console.log(`get request Login`);
+const login = (req, res) => {
     return res.send("Login page");
 }
 
-app.get("/", handleHome);
-app.get("/login", handleLogin);
+app.use(logger);
+
+app.get("/", home);
+app.get("/login", login);
 
 const handleListening = ()=> console.log(`server listening on port http://localhost:${PORT}`);
 
