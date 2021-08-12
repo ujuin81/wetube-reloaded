@@ -2,8 +2,11 @@ extends base.pug
 
 block content 
     h1 Home!~
-    ul 
-        each video in videos
-            li=video.title
-        else 
-            li no data
+    each video in videos
+        div 
+            h2=video.title
+            ul 
+                li #{video.rating}/5 
+                li #{video.views} views
+    else 
+        div no data
