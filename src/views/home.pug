@@ -1,12 +1,9 @@
 extends base.pug
+include mixins/video
 
 block content 
     h1 Home!~
     each video in videos
-        div 
-            h2=video.title
-            ul 
-                li #{video.rating}/5 
-                li #{video.views} views
+        +video(video) 
     else 
         div no data
