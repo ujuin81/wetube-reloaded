@@ -1,4 +1,7 @@
-export const trending = (req, res) => res.render("home", {pageTitle: "Home"});
+export const trending = (req, res) => {
+    const videos = [{title: "Video 1"},{title: "Video 2"},{title: "Video 3"}]
+    return res.render("home", {pageTitle: "Home", videos});
+};
 export const edit = (req, res) => res.render("edit", {pageTitle: "Edit"}); 
 
 export const search = (req, res) => res.send("search video page");
